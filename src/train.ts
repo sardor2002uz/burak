@@ -19,13 +19,25 @@
 
 
 
-function getSquareNumbers(numbers: number[]) {
-    return numbers.map(function (number: number) {
-        return {
-            number: number,
-            square: number * number
-        };
-    });
+// function getSquareNumbers(numbers: number[]) {
+//     return numbers.map(function (number: number) {
+//         return {
+//             number: number,
+//             square: number * number
+//         };
+//     });
+// }
+
+// console.log(getSquareNumbers([1, 2, 3]));
+
+
+
+
+function palindromCheck(str: string): boolean {
+    const reverse = str.split("").reverse().join("");
+
+    return str === reverse;
 }
 
-console.log(getSquareNumbers([1, 2, 3]));
+console.log(palindromCheck("dad")); // true
+console.log(palindromCheck("son")); // false
