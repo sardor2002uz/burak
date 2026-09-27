@@ -37,7 +37,7 @@ const memberSchema = new Schema(
             type: String,
         },
 
-        memberDecs: {
+        memberDesc: {
             type: String,
         },
 
