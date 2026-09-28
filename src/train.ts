@@ -33,11 +33,26 @@
 
 
 
-function palindromCheck(str: string): boolean {
-    const reverse = str.split("").reverse().join("");
+// function palindromCheck(str: string): boolean {
+//     const reverse = str.split("").reverse().join("");
 
-    return str === reverse;
-}
+//     return str === reverse;
+// }
 
-console.log(palindromCheck("dad")); // true
-console.log(palindromCheck("son")); // false
+// console.log(palindromCheck("dad")); // true
+// console.log(palindromCheck("son")); // false
+
+
+
+
+/* Project Standards:
+  - Logging standards
+  - Naming standards
+      function, method, variable => CAMEL      goHome
+      class => PASCAL                          MemberService
+      folder => KEBEB
+      css => SNAKE                             button_style
+ - Error handling
+
+
+*/
