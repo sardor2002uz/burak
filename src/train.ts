@@ -56,3 +56,10 @@
 
 
 */
+
+/* 
+ Traditinal Api
+ Rest Api        3turdagi eng kop ishlatadigon Api larimiz
+ GraphQl Api
+ ...
+*/
