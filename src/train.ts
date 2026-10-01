@@ -69,18 +69,27 @@
 
 
 
-function calculateSumOfNumbers(arr: any[]): number {
-  let sum = 0;
+// function calculateSumOfNumbers(arr: any[]): number {
+//   let sum = 0;
 
-  arr.forEach((value) => {
-    if (typeof value === "number") {
-      sum += value;
-    }
-  });
+//   arr.forEach((value) => {
+//     if (typeof value === "number") {
+//       sum += value;
+//     }
+//   });
 
-  return sum;
+//   return sum;
+// }
+
+// console.log(
+//   calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])
+// );
+
+
+
+
+function objectToArray(obj: object): [string, any][] {
+  return Object.entries(obj);
 }
 
-console.log(
-  calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])
-);
+console.log(objectToArray({ a: 10, b: 20 }));
