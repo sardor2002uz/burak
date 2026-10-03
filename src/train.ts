@@ -57,7 +57,7 @@
 
 */
 
-/* 
+/*
  Traditinal Api
  Rest Api        3turdagi eng kop ishlatadigon Api larimiz
  GraphQl Api
@@ -88,8 +88,16 @@
 
 
 
-function objectToArray(obj: object): [string, any][] {
-  return Object.entries(obj);
-}
+// function objectToArray(obj: object): [string, any][] {
+//   return Object.entries(obj);
+// }
 
-console.log(objectToArray({ a: 10, b: 20 }));
+// console.log(objectToArray({ a: 10, b: 20 }));
+
+
+
+
+/* 
+  Traditional Frontend Development    => SSR  => EJS
+  Modern Frontend Development         => SPA   => REACT
+*/
