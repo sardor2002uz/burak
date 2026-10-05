@@ -97,7 +97,7 @@
 
 
 
-/* 
+/*
   Traditional Frontend Development    => SSR  => EJS
   Modern Frontend Development         => SPA   => REACT
 */
@@ -105,12 +105,19 @@
 
 
 
-function hasProperty(obj: object, property: string): boolean {
-  return property in obj;
-}
+// function hasProperty(obj: object, property: string): boolean {
+//   return property in obj;
+// }
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
-// true
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+// // true
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
-// false
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
+// // false
+
+
+
+/*
+  request join
+  self destroy
+*/
