@@ -121,3 +121,13 @@
   request join
   self destroy
 */
+
+
+
+function calculate(str: string): number {
+  const numbers = str.split("+").map(Number);
+  return numbers.reduce((sum, num) => sum + num, 0);
+}
+
+console.log(calculate("1+3")); // 4
+console.log(calculate("10+20+30")); // 60
