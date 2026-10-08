@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan(MORGAN_FORMAT));
+app.use("/uploads", express.static("./uploads"));
 
 /** 2-SESSIONS **/
 app.use(
