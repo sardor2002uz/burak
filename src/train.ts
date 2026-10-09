@@ -57,7 +57,7 @@
 
 */
 
-/*
+/* Request:
  Traditinal Api
  Rest Api        3turdagi eng kop ishlatadigon Api larimiz
  GraphQl Api
@@ -97,7 +97,7 @@
 
 
 
-/*
+/* Frontend Development:
   Traditional Frontend Development    => SSR  => EJS
   Modern Frontend Development         => SPA   => REACT
 */
@@ -117,17 +117,25 @@
 
 
 
-/*
+/* Cookies:
   request join
   self destroy
 */
 
 
 
-function calculate(str: string): number {
-  const numbers = str.split("+").map(Number);
-  return numbers.reduce((sum, num) => sum + num, 0);
-}
+// function calculate(str: string): number {
+//   const numbers = str.split("+").map(Number);
+//   return numbers.reduce((sum, num) => sum + num, 0);
+// }
 
-console.log(calculate("1+3")); // 4
-console.log(calculate("10+20+30")); // 60
+// console.log(calculate("1+3")); // 4
+// console.log(calculate("10+20+30")); // 60
+
+
+
+/* Validation:
+Frontend validation
+Backend validation
+Database validation
+*/
