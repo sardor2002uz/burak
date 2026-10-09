@@ -139,3 +139,15 @@ Frontend validation
 Backend validation
 Database validation
 */
+
+
+function missingNumber(nums: number[]): number {
+  const n = nums.length;
+  const total = (n * (n + 1)) / 2;
+
+  const sum = nums.reduce((a, b) => a + b, 0);
+
+  return total - sum;
+}
+
+console.log(missingNumber([3, 0, 1])); // 2
