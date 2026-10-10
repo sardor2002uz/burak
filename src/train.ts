@@ -151,3 +151,13 @@ function missingNumber(nums: number[]): number {
 }
 
 console.log(missingNumber([3, 0, 1])); // 2
+
+
+
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  return [...arr1, ...arr2].sort((a, b) => a - b);
+}
+
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+// Natija: [0, 3, 4, 4, 6, 30, 31]
