@@ -77,10 +77,6 @@ class MemberService {
         const salt = await bcrypt.genSalt();
         input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
 
-
-
-
-
         try {
             const result = await this.memberModel.create(input);
             result.memberPassword = "";
@@ -91,6 +87,10 @@ class MemberService {
 
         }
     }
+
+
+
+
     public async processLogin(input: LoginInput): Promise<Member> {
         const member = await this.memberModel
             .findOne(
@@ -127,6 +127,15 @@ class MemberService {
 
 
 
+    }
+
+    public async getUsers(): Promise<Member[]> {
+        const result = await this.memberModel
+            .find({ memberType: MemberType.USER })
+            .exec();
+        if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+        return result;
     }
 }
 

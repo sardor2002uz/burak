@@ -97,7 +97,7 @@ restaurantController.processLogin = async (req: AdminRequest, res: Response) => 
         const message =
             err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG
         res.send(
-            `<script> alert("${message}"); window.location.replace('admin/login) </script>`
+            `<script> alert("${message}"); window.location.replace('admin/login') </script>`
         );
 
     }
@@ -111,14 +111,34 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
         })
         console.log("body:", req.body);
 
-
-
-
     } catch (err) {
         console.log("Error, logout:", err);
         res.redirect("/admin");
     }
 };
+
+restaurantController.getUsers = async (req: Request, res: Response) => {
+    try {
+        console.log("getUsers");
+        const result = await memberService.getUsers();
+        console.log("result:", result);
+
+        res.render("users", { users: result });
+    } catch (err) {
+        console.log("Error, getUsers:", err);
+        res.redirect("/admin/login");
+    }
+};
+
+restaurantController.updateChosenUser = (req: Request, res: Response) => {
+    try {
+        console.log("updateChosenUser");
+    } catch (err) {
+        console.log("Error, updateChosenUser:", err);
+    }
+};
+
+
 
 restaurantController.checkAuthSession = async (req: AdminRequest, res: Response) => {
     try {
