@@ -178,3 +178,23 @@ function sumOdds(n: number): number {
 
 console.log(sumOdds(9));  // 4
 console.log(sumOdds(11)); // 5
+
+
+
+
+function countChars(str: string): { [key: string]: number } {
+  const result: { [key: string]: number } = {};
+
+  for (const char of str) {
+    if (result[char]) {
+      result[char]++;
+    } else {
+      result[char] = 1;
+    }
+  }
+
+  return result;
+}
+
+console.log(countChars("hello"));
+// { h: 1, e: 1, l: 2, o: 1 }
