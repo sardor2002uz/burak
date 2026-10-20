@@ -1,4 +1,5 @@
 import path from "path";
+import fs from "fs";
 import multer from 'multer';
 import { v4 } from "uuid";
 
@@ -6,7 +7,11 @@ import { v4 } from "uuid";
 function getTargetImageStorage(address: any) {
     return multer.diskStorage({
         destination: function (req, file, cb) {
-            cb(null, `./uploads/${address}`);
+            const destination = path.resolve(process.cwd(), "uploads", address);
+            fs.mkdir(destination, { recursive: true }, (error) => {
+                if (error) return cb(error, destination);
+                cb(null, destination);
+            });
         },
         filename: function (req, file, cb) {
             const extension = path.parse(file.originalname).ext;
