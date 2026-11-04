@@ -2,6 +2,7 @@ import express from "express";
 const router = express.Router();
 import memberController from "./controllers/member.controller";
 import uploader from "./libs/untils/uploader";
+import productController from "./controllers/product.controller";
 
 /** Member **/
 ROUTER:
@@ -32,6 +33,7 @@ router.get("/member/top-users", memberController.getTopUsers);
 
 
 /** Product **/
+router.get("/product/all", productController.getProducts);
 
 /** Order **/
 
