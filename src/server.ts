@@ -6,7 +6,6 @@ import app from "./app";
 
 console.log("PORT:", process.env.PORT);
 
-console.log("MONGO_URL:", process.env.MONGO_URL);
 
 
 
