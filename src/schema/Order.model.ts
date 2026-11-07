@@ -3,7 +3,7 @@ import { OrderStatus } from "../libs/enums/order.enum";
 
 const orderSchema = new Schema(
     {
-        orderToral: {
+        orderTotal: {
             type: Number,
             required: true,
         },
