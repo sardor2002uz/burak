@@ -125,7 +125,7 @@ class OrderService {
         }
 
         if (orderStatus === OrderStatus.PROCESS) {
-            await this.memberService.addUserPoints(member, 1);
+            await this.memberService.addUserPoint(member, 1);
         }
 
         return result;
