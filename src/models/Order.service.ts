@@ -68,14 +68,20 @@ class OrderService {
         inquiry: OrderInquiry
     ): Promise<Order[]> {
         const memberId = shapeIntoMongooseObjectId(member._id);
-        const matches = { memberId: memberId, orderStatus: inquiry.orderStatus };
+        const page = Number(inquiry.page) || 1;
+        const limit = Number(inquiry.limit) || 10;
+        const matches: Record<string, unknown> = { memberId: memberId };
+
+        if (inquiry.orderStatus) {
+            matches.orderStatus = inquiry.orderStatus;
+        }
 
         const result = await this.orderModel
             .aggregate([
                 { $match: matches },
-                { $sort: { updateAt: -1 } },
-                { $skip: (inquiry.page - 1) * inquiry.limit },
-                { $limit: inquiry.limit },
+                { $sort: { updatedAt: -1 } },
+                { $skip: (page - 1) * limit },
+                { $limit: limit },
                 {
                     $lookup: {
                         from: "orderItems",
@@ -90,12 +96,15 @@ class OrderService {
                         from: "products",
                         localField: "orderItems.productId",
                         foreignField: "_id",
-                        as: "productData"
-                    }
-                }
+                        as: "productData",
+                    },
+                },
             ])
             .exec();
-        if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+        if (!result || result.length === 0) {
+            throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+        }
 
         return result;
     }
